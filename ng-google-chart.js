@@ -51,6 +51,11 @@
                     }
                 };
 
+                // override language
+                if (typeof document.documentElement.lang !== "undefined") {
+                    settings.language = document.documentElement.lang;
+                }
+
                 settings = angular.extend({}, apiConfig.optionalSettings, settings);
 
                 window.google.load('visualization', apiConfig.version, settings);
